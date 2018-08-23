@@ -1,0 +1,43 @@
+
+main{
+  width: 375px;
+  height: 667px;
+  background: #F4F4F4;
+  border: 2px solid #2d3436;
+  margin: auto;
+}
+div.screen{
+  width: 100%;
+  height: 193px;
+  background: #91C4B6;
+  border-bottom: 1px solid black;
+}
+div.keyboard{
+  width: 100%;
+  height: 473px;
+}
+div.item{
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  height: 94px;
+}
+/* KEY */
+div.item{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.item:active{
+    background: #D3CDCD;
+}
+h1.symbol{
+  font-size: 40px;
+}
+#keyDot h1{
+  font-size: 70px;
+  margin-top: -30px;
+}
+h1#display{
+  margin: 0;
+}
