@@ -11,6 +11,8 @@ div.screen{
   height: 193px;
   background: #91C4B6;
   border-bottom: 1px solid black;
+  display: flex;
+  justify-content: flex-end;
 }
 div.keyboard{
   width: 100%;
@@ -40,4 +42,9 @@ h1.symbol{
 }
 h1#display{
   margin: 0;
+  margin-right: 10px;
+  font-size: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }

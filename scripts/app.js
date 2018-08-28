@@ -2,8 +2,7 @@ let input1 =""
 let input2
 let calculator
 let result
-
-
+let resetKey = document.getElementById('keyAc')
 let key = document.querySelectorAll('.item')
 let display = document.getElementById('display')
 let key1 = document.getElementById('key1')
@@ -19,7 +18,7 @@ let key0 = document.getElementById('key0')
 let keyResult = document.getElementById('keyResult')
 
 
-
+resetKey.addEventListener("click",reset)
 key1.addEventListener("click",keyInput1)
 key2.addEventListener("click",keyInput2)
 key3.addEventListener("click",keyInput3)
@@ -30,7 +29,6 @@ key7.addEventListener("click",keyInput7)
 key8.addEventListener("click",keyInput8)
 key9.addEventListener("click",keyInput9)
 key0.addEventListener("click",keyInput0)
-keyResult.addEventListener("click",displayTest)
 for (var i = 0; i < key.length; i++) {
   key[i].addEventListener("click",displayOutPout)
 }
@@ -66,11 +64,15 @@ function keyInput0(){
   input1 = input1+"0"
 }
 
-function displayTest(){
-  window.alert(input1)
-}
 
 function displayOutPout() {
 display.innerHTML = input1
+}
+function reset() {
+input1=""
+input2=""
+}
 
+function test(){
+  window.alert("click")
 }
