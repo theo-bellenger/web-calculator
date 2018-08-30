@@ -4,6 +4,7 @@ let calculator
 let result = ""
 let validity = true
 let secondInput = false
+let canNegative = true
 let calcul
 let resetKey = document.getElementById('keyAc')
 let key = document.querySelectorAll('.item')
@@ -24,6 +25,7 @@ let keyPlus = document.getElementById('keyPlus')
 let keyTime = document.getElementById('keyTime')
 let keyDivide = document.getElementById('keyDivide')
 let keyMinus = document.getElementById('keyMinus')
+let keyNegative = document.getElementById('keyNegative')
 
 resetKey.addEventListener("click",reset)
 key1.addEventListener("click",keyInput1)
@@ -45,6 +47,7 @@ keyTime.addEventListener("click",multiplication)
 keyDivide.addEventListener("click",division)
 keyMinus.addEventListener("click",substraction)
 keyResult.addEventListener("click",calculation)
+keyNegative.addEventListener("click",negative)
 
 function keyInput1(){
   if (secondInput == false){
@@ -118,9 +121,23 @@ function keyInput0(){
 }
 function dot(){
   if (validity == true){
-    input1 = input1+"."
+    if (secondInput == false){
+      input1 = input1+"."}
+      else {
+        input2 = input2+"."
+      }
   }
   validity = false
+}
+function negative(){
+  if (input1 === ""){
+    input1 = "-"+input1
+    display.innerHTML = input1
+  }
+ else if (input2 === ""){
+   input2 = "-"+input2
+   display.innerHTML = input2
+ }
 }
 
 function displayOutPout() {
@@ -136,18 +153,22 @@ secondInput = false
 }
 
 function some(){
+  validity = true
   secondInput = true
   calcul = "some"
 }
 function multiplication(){
+  validity = true
   secondInput = true
   calcul = "time"
 }
 function division(){
+  validity = true
   secondInput = true
   calcul = "divide"
 }
 function substraction(){
+  validity = true
   secondInput = true
   calcul = "minus"
 }
